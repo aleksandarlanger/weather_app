@@ -9,19 +9,18 @@ weatherForm.addEventListener("submit", (e) => {
   const location = search.value;
   load.textContent = " Loading .. Wow";
 
-  fetch(`http://localhost:3000/weather?address=${location}`).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          load.textContent = "";
-          error.textContent = data.error;
-        } else {
-          console.log(data);
-          const temp = data.forecast.temperature;
-          const city = data.location;
-          const description = data.forecast.description;
+  fetch(`/weather?address=${location}`).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        load.textContent = "";
+        error.textContent = data.error;
+      } else {
+        console.log(data);
+        const temp = data.forecast.temperature;
+        const city = data.location;
+        const description = data.forecast.description;
 
-          document.querySelector(".report").innerHTML = `
+        document.querySelector(".report").innerHTML = `
             
             <div class="tempwrap">
 
@@ -37,11 +36,10 @@ weatherForm.addEventListener("submit", (e) => {
             </div>
             `;
 
-          if (temp >= 30) {
-            document.querySelector(".temp").style.color = "#DD5353";
-          }
+        if (temp >= 30) {
+          document.querySelector(".temp").style.color = "#DD5353";
         }
-      });
-    }
-  );
+      }
+    });
+  });
 });
