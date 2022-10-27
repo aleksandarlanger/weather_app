@@ -6,6 +6,7 @@
   <li>OpenWeather API</li>
 
   <p> Link to the deployed app: </p>
+  
   https://langer-weather-app.herokuapp.com/
 
 
