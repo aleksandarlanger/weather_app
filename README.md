@@ -3,7 +3,7 @@
   <li>JavaScript</li>
   <li>Express.js</li>
   <li>Mapbox API</li>
-  <li>OpenWeather API</li>
+  <li>OpenWeather API</li> <br>
 
   <p> Link to the deployed app: </p>
   
